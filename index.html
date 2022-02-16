@@ -25,40 +25,43 @@
         </div>
         <div class="col-md-6 text-center">
           <h2 class="bold fs-4 text-dark text-center">Income</h2>
-          <h4>Income: <input type="number" placeholder="enter number" /></h4>
+          <h4>Income: <input id="income" type="text" placeholder="enter number" /></h4>
           <h2 class="mb-3">Expenses</h2>
           <h4 class="mb-3">
-            Rent :    <input type="number" placeholder="enter number" />
+            Food : <input id='food-input' type="text" placeholder="enter number" />
           </h4>
           <h4 class="mb-3">
-            Clothes : <input type="number" placeholder="enter number" />
+            Rent :    <input id="rent-input" type="text" placeholder="enter number" />
           </h4>
           <h4 class="mb-3">
-            Income: <input type="number" placeholder="enter number" />
+            Clothes : <input id="clothes-input" type="text" placeholder="enter number" />
           </h4>
+       
           <button
+          id="calculate"
             type="button"
             class="btn btn-lg btn-secondary my-3 text-light"
           >
             Calculate
           </button>
-          <h2 class="bold fs-4 text-dark text-center">Total Expenses : <span>0</span></h2>
-          <h2 class="bold fs-4 text-dark text-center">Balance: <span>0</span></h2>
-          <h4>Save: <input type="number"> <span>%</span>  <button
+          <h2 class="bold fs-4 text-dark text-center">Total Expenses : <span id="total-expenses">00</span></h2>
+          <h2 class="bold fs-4 text-dark text-center">Balance: <span id="total-balance">00</span></h2>
+          <h4>Save: <input id="save-input" type="text" class="rounded"> <span>%</span>  <button
+            id="save"
             type="button"
             class="btn btn-lg btn-secondary my-3 text-light"
           >
             Save
           </button></h4>
-          <h2 class="bold fs-4 text-dark text-center">Saving Amount : <span>0</span></h2>
-          <h2 class="bold fs-4 text-dark text-center mb-5">Remaining Balance: <span>0</span></h2>
+          <h2 class="bold fs-4 text-dark text-center">Saving Amount : <span id="save-amount">0</span></h2>
+          <h2 class="bold fs-4 text-dark text-center mb-5">Remaining Balance: <span id="remain-balance">0</span></h2>
         </div>
       </div>
     </div>
     <!-- <h1 id="title">Money Master</h1>
     <h1 class="title">Money Master</h1> -->
 
-    <script>
+    <script src="js/index.js">
       //  document.getElementById("title").style.backgroundColor="yellow";
       //  document.getElementsByClassName("title").style.backgroundColor="yellow";
     </script>
