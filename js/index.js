@@ -19,7 +19,6 @@ function getInputValue(inputId) {
   else{
     return amountValue;
   }
- 
 }
 
 
@@ -29,12 +28,13 @@ function getCurrentBalance() {
   const previousBalanceTotal = parseFloat(balanceTotalText);
   return previousBalanceTotal;
 }
-function updateBalance(totalIncome,amount,isAdd) {
+function updateBalance(totalIncome,amount) {
   const balanceTotal = document.getElementById('total-balance');
   if(totalIncome>=amount){
     const balance = totalIncome - amount;
-    const previousBalanceTotal = getCurrentBalance();
-    balanceTotal.innerText = previousBalanceTotal  + balance;
+    // const previousBalanceTotal = getCurrentBalance();
+    // balanceTotal.innerText = previousBalanceTotal  + balance;
+    balanceTotal.innerText =  balance;
   }
   else if(totalIncome<amount){
     // alert("you don't have sufficient Balance");
@@ -54,13 +54,15 @@ document.getElementById('calculate').addEventListener('click', function () {
     const totalExpenses = document.getElementById('total-expenses');
     const prevExpensesText = totalExpenses.innerText;
     const prevExpensesValue = parseFloat(prevExpensesText);
-    const newExpensesTotal = prevExpensesValue + totalSum;
+    // const newExpensesTotal = prevExpensesValue + totalSum;
+    const newExpensesTotal =  totalSum;
     totalExpenses.innerText = newExpensesTotal;
+
 
     const totalIncome = getInputValue("income");
     console.log(totalIncome)
     console.log(newExpensesTotal);
-    updateBalance(totalIncome,newExpensesTotal,true);
+    updateBalance(totalIncome,newExpensesTotal);
 
 });
 
