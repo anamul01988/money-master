@@ -4,67 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/index.css">
-
+    <link rel="stylesheet" href="css/index.css" />
     <title>assignment</title>
   </head>
   <body>
     <div class="container">
-      <h2 class="bold fs-1 text-dark my-5 text-center">
+      <h2 class="bold fs-1 fw-bolder text-dark my-3 text-center main-title">
         Monthly Income Scheme
       </h2>
       <div class="row">
-        <div class="col-md-6">
-          <img src="" alt="" />
+        <div class="col-md-6 col-12">
+          <img src="img/img.svg" alt="img" />
         </div>
-        <div class="col-md-6 text-center">
-          <h2 class="bold fs-4 text-dark text-center">Income</h2>
-          <h4>Income: <input id="income" type="text" placeholder="enter number" /></h4>
-          <h2 class="mb-3">Expenses</h2>
+        <div class="col-md-6 col-12 text-center bg-light">
+          <h2 class="bold fs-4 fw-normal text-dark text-center my-2">Income</h2>
+          <div id="input-area">
+            <h4 class="my-2">
+              Income:
+              <input id="income" type="text" placeholder="enter number" />
+            </h4>
+          </div>
+          <h2 class="mt-3 fs-4 fw-normal">Expenses</h2>
           <h4 class="mb-3">
-            Food : <input id='food-input' type="text" placeholder="enter number" />
+            Food :
+            <input id="food-input" type="text" placeholder="enter number" />
           </h4>
           <h4 class="mb-3">
-            Rent :    <input id="rent-input" type="text" placeholder="enter number" />
+            Rent :
+            <input id="rent-input" type="text" placeholder="enter number" />
           </h4>
           <h4 class="mb-3">
-            Clothes : <input id="clothes-input" type="text" placeholder="enter number" />
+            Clothes :
+            <input id="clothes-input" type="text" placeholder="enter number" />
           </h4>
-       
+          <h4 class="mb-3"></h4>
+
           <button
-          id="calculate"
-            type="button"
-            class="btn btn-lg btn-secondary my-3 text-light"
+            id="calculate"
+            type="submit"
+            class="btn btn-lg btn-secondary my-2 text-light"
           >
             Calculate
           </button>
-          <h2 class="bold fs-4 text-dark text-center">Total Expenses : <span id="total-expenses">00</span></h2>
-          <h2 class="bold fs-4 text-dark text-center">Balance: <span id="total-balance">00</span></h2>
-          <h4>Save: <input id="save-input" type="text" class="rounded"> <span>%</span>  <button
-            id="save"
-            type="button"
-            class="btn btn-lg btn-secondary my-3 text-light"
-          >
-            Save
-          </button></h4>
-          <h2 class="bold fs-4 text-dark text-center">Saving Amount : <span id="save-amount">0</span></h2>
-          <h2 class="bold fs-4 text-dark text-center mb-5">Remaining Balance: <span id="remain-balance">0</span></h2>
+          <p id="alert" class="mt-3"></p>
+          <h2 class="bold fs-4 text-dark text-center">
+            Total Expenses : <span id="total-expenses">00</span>
+          </h2>
+          <h2 class="bold fs-4 text-dark text-center">
+            Balance: <span id="total-balance">00</span>
+          </h2>
+          <h4 class="fs-4 fw-bolder">
+            Save: <input id="save-input" type="text" class="rounded" />
+            <span>%</span>
+            <button
+              id="save"
+              type="button"
+              class="btn btn-lg btn-secondary my-3 text-light"
+            >
+              Save
+            </button>
+          </h4>
+          <h2 class=" fs-5 text-dark text-center">
+            Saving Amount : <span id="save-amount">00</span>
+          </h2>
+          <h2 class=" fs-5 text-dark text-center mb-5">
+            Remaining Balance: <span id="remain-balance">00</span>
+          </h2>
         </div>
       </div>
     </div>
-    <!-- <h1 id="title">Money Master</h1>
-    <h1 class="title">Money Master</h1> -->
 
-    <script src="js/index.js">
-      //  document.getElementById("title").style.backgroundColor="yellow";
-      //  document.getElementsByClassName("title").style.backgroundColor="yellow";
-    </script>
+    <script src="js/index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

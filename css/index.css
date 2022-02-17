@@ -1,9 +1,28 @@
-input{
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; */
+h1,h2,h3,h4,h5{
+    font-family: 'Roboto', sans-serif;
+}
+p,
+span{
+    font-family: 'Poppins', sans-serif;
+}
+input {
     border: 2px solid hsl(0, 0%, 0%);
-    /* background: #979595; */
+    background: #ac7575;
     color: #000;
     text-align: center;
     background: #f6f6f6;
     padding: 5px 5px;
     font-size: 18px;
+    background-color: #e4d6c7;
+}
+img{
+    height : 100%;
+    width: 100%;
+}
+.main-title{
+    background: lightblue;
+    padding: 10px;
 }

@@ -66,23 +66,36 @@
 
 //functionality
 
-function getInputValue(inputId) {
 
+function getInputValue(inputId) {
   const inputField = document.getElementById(inputId);
   const inputAmountText = inputField.value;
   const amountValue = parseFloat(inputAmountText);
-  // inputField.value = '';
-  return amountValue;
-}
-function sumOfTheTotalField(sumFieldId, totalSum){
-  // const totalExpenses = document.getElementById(sumFieldId);
-  // const prevExpensesText = totalExpenses.innerText;
-  // const prevExpensesValue = parseFloat(prevExpensesText);
-  // const newExpensesTotal = prevExpensesValue + totalSum;
-  // totalExpenses.innerText = newExpensesTotal;
-}
+  console.log(amountValue)
+  if(isNaN(amountValue)){
+    document.getElementById('alert').innerHTML ="pls reload this page and send number";
+    document.getElementById('alert').style.background="lightBlue";
+    document.getElementById('alert').style.color="black";
+  }
+  else if(amountValue < 0){
+    alert("negative value is not allowed")
+    document.getElementById('alert').innerHTML ="Negative value is not allowed";
+    document.getElementById('alert').style.display="none";
 
+  }
+  else{
+    return amountValue;
+  }
+  // const amountValue = parseFloat(inputAmountText);
+  // return amountValue;
+}
+// function getInputValue(inputId) {
 
+//   const inputField = document.getElementById(inputId);
+//   const inputAmountText = inputField.value;
+//   const amountValue = parseFloat(inputAmountText);
+//   return amountValue;
+// }
 
 function getCurrentBalance() {
   const balanceTotal = document.getElementById('total-balance');
@@ -92,14 +105,26 @@ function getCurrentBalance() {
 }
 function updateBalance(totalIncome,amount,isAdd) {
   const balanceTotal = document.getElementById('total-balance');
-  const balance = totalIncome - amount;
-  const previousBalanceTotal = getCurrentBalance();
-  if (isAdd == true) {
-      balanceTotal.innerText = previousBalanceTotal  + balance;
+  if(totalIncome>=amount){
+    const balance = totalIncome - amount;
+    const previousBalanceTotal = getCurrentBalance();
+    balanceTotal.innerText = previousBalanceTotal  + balance;
   }
-  else {
-      balanceTotal.innerText = previousBalanceTotal - amount;
+  else if(totalIncome<amount){
+    // alert("you don't have sufficient Balance");
+    document.getElementById('alert').innerHTML ="you don't have sufficient ballance";
+    document.getElementById('alert').style.background="lightBlue";
+    document.getElementById('alert').style.color="black";
   }
+  // const balance = totalIncome - amount;
+  // const previousBalanceTotal = getCurrentBalance();
+  // balanceTotal.innerText = previousBalanceTotal  + balance;
+  // if (isAdd == true) {
+  //     balanceTotal.innerText = previousBalanceTotal  + balance;
+  // }
+  // else {
+  //     balanceTotal.innerText = previousBalanceTotal - amount;
+  // }
 }
 
 document.getElementById('calculate').addEventListener('click', function () {
@@ -111,24 +136,17 @@ document.getElementById('calculate').addEventListener('click', function () {
 
     const totalSum = food + rent + clothes;
 
-
     const totalExpenses = document.getElementById('total-expenses');
     const prevExpensesText = totalExpenses.innerText;
     const prevExpensesValue = parseFloat(prevExpensesText);
     const newExpensesTotal = prevExpensesValue + totalSum;
     totalExpenses.innerText = newExpensesTotal;
 
-
-
-
     const totalIncome = getInputValue("income");
     console.log(totalIncome)
     console.log(newExpensesTotal);
     updateBalance(totalIncome,newExpensesTotal,true);
 
- 
-
- 
 });
 
 document.getElementById("save").addEventListener("click", function () {
@@ -145,21 +163,31 @@ document.getElementById("save").addEventListener("click", function () {
   const percentage = ( saveValue * totalIncomeValue)/100;
   console.log("Percentage", percentage);
 
-   const saveAmount = document.getElementById('save-amount');
-  const preSaveText = saveAmount.innerText;
-  const preSaveValue = parseFloat(preSaveText);
-  const newSaveTotal = preSaveValue + percentage;
-  saveAmount.innerText = newSaveTotal;
+
 
   const currentBalance = getCurrentBalance();
-  const remainingBalance = currentBalance - newSaveTotal;
-  console.log(remainingBalance);
 
-  const remainingTotalBalance = document.getElementById('remain-balance');
-  const prevBalanceText = remainingTotalBalance.innerText;
-    const prevBalanceValue = parseFloat(prevBalanceText);
-    const newBalanceTotal = prevBalanceValue + remainingBalance;
-    console.log(newBalanceTotal);
-    remainingTotalBalance.innerText = newBalanceTotal;
-
+  if(percentage>currentBalance){
+    console.log("impossible")
+    alert("impossible to saving")
+  }
+  else{
+    const saveAmount = document.getElementById('save-amount');
+    const preSaveText = saveAmount.innerText;
+    const preSaveValue = parseFloat(preSaveText);
+    const newSaveTotal = preSaveValue + percentage;
+    saveAmount.innerText = newSaveTotal;
+  
+    // const currentBalance = getCurrentBalance();
+    const remainingBalance = currentBalance - newSaveTotal;
+    console.log(remainingBalance);
+  
+    const remainingTotalBalance = document.getElementById('remain-balance');
+    const prevBalanceText = remainingTotalBalance.innerText;
+      const prevBalanceValue = parseFloat(prevBalanceText);
+      const newBalanceTotal = prevBalanceValue + remainingBalance;
+      console.log(newBalanceTotal);
+      remainingTotalBalance.innerText = newBalanceTotal;
+  }
 });
+
