@@ -24,30 +24,45 @@
       <h2 class="bold fs-1 fw-bolder text-dark my-3 text-center main-title">
         Monthly Income Scheme
       </h2>
-      <div class="row">
+      <div class="row ">
         <div class="col-md-6 col-12">
           <img src="img/img.svg" alt="img" />
         </div>
         <div class="col-md-6 col-12 text-center bg-light">
           <h2 class="bold fs-4 fw-normal text-dark text-center my-2">Income</h2>
           <div id="input-area">
-            <h4 class="my-2">
-              Income:
-              <input id="income" type="text" placeholder="enter number" />
-            </h4>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Income: </span>
+              </div>
+              <input id="income" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
           </div>
-          <h2 class="mt-3 fs-4 fw-normal">Expenses</h2>
+          
+          <h2 class="bold fs-4 fw-normal text-dark text-center my-2">Expenses</h2>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Food: </span>
+            </div>
+            <input id="food-input" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+          </div>
+
           <h4 class="mb-3">
-            Food :
-            <input id="food-input" type="text" placeholder="enter number" />
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Rent: </span>
+              </div>
+              <input id="rent-input" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
           </h4>
           <h4 class="mb-3">
-            Rent :
-            <input id="rent-input" type="text" placeholder="enter number" />
-          </h4>
-          <h4 class="mb-3">
-            Clothes :
-            <input id="clothes-input" type="text" placeholder="enter number" />
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Clothes:</span>
+              </div>
+              <input id="clothes-input" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
           </h4>
           <h4 class="mb-3"></h4>
 
